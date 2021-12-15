@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Problem2\BallController.cs" />
+     <Compile Include="Assets\Scripts\Problem2\ResourceController.cs" />
+     <Compile Include="Assets\Scripts\Problem2\ResourceManager.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Dilo/DILo-Problem-Solving/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
