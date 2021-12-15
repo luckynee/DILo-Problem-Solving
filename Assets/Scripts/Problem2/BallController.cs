@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class BallController : MonoBehaviour
 {
+    public UnityEvent OnGetResource;
     public float speed = 5f;
 
     private Vector2 inputVector = Vector2.zero;
@@ -22,6 +23,16 @@ public class BallController : MonoBehaviour
         {
             inputVector = GetDirection();
             MoveCircle(inputVector, speed);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Resource")
+        {
+            Destroy(collision.gameObject);
+            OnGetResource.Invoke();
+            Debug.Log("Get Resource");
         }
     }
 

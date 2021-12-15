@@ -23,7 +23,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < count; i++)
+        for(int i = 0; i < count; i++)
             SpawnResource(_xRadius, _yRadius);
     }
 

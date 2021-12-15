@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Problem2\BallController.cs" />
      <Compile Include="Assets\Scripts\Problem2\ResourceController.cs" />
      <Compile Include="Assets\Scripts\Problem2\ResourceManager.cs" />
+     <Compile Include="Assets\Scripts\Problem2\ScoreManager.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Dilo/DILo-Problem-Solving/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
