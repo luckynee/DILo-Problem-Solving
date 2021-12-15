@@ -6,21 +6,15 @@ public class BallController : MonoBehaviour
 {
     public float speed = 10f;
 
-    //Components
     Rigidbody2D rb2d;
 
-    void Start()
+    private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        SetVelocity(speed);
+        MoveCircle(speed);
     }
 
-    void FixedUpdate()
-    {
-
-    }
-
-    private void SetVelocity(float velocity)
+    private void MoveCircle(float velocity)
     {
         rb2d.velocity = Random.onUnitSphere * velocity;
     }
