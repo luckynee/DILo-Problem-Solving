@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BallController : MonoBehaviour
 {
@@ -17,13 +18,24 @@ public class BallController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        inputVector.x = Input.GetAxis("Horizontal");
-        inputVector.y = Input.GetAxis("Vertical");
-        MoveCircle(inputVector, speed);
+        if (Input.GetButtonDown("Fire1"))
+        {
+            inputVector = GetDirection();
+            MoveCircle(inputVector, speed);
+        }
     }
 
     private void MoveCircle(Vector2 input, float velocity)
     {
-        rb2d.velocity = inputVector * velocity;
+        rb2d.velocity = input * velocity;
+    }
+
+    public Vector2 GetDirection()
+    {
+        Debug.Log("Clicked");
+        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.z));
+        Vector3 direction = worldMousePosition - this.transform.position;
+        direction.Normalize();
+        return (Vector2)direction;
     }
 }
